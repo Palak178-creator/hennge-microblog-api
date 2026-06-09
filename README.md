@@ -1,46 +1,111 @@
-# 🚀 HENNGE Microblog API
+# JWT-Authenticated Microblog API
 
-A production-style backend REST API built using Go (Gin), PostgreSQL, GORM, and JWT authentication.
+A secure RESTful microblogging backend built with Go, featuring JWT-based authentication, protected routes, Docker containerization, and a modular project structure.
 
----
+## Features
 
-## 🔥 Features
+* User Registration
+* User Login with JWT Authentication
+* Protected API Routes
+* Create and View Posts
+* Authorization Middleware
+* Docker Support
+* Modular Project Architecture
 
-- User Registration & Login
-- JWT Authentication System
-- Protected Routes (Middleware)
-- Create & Fetch Posts
-- User-linked posts (Relational DB)
-- PostgreSQL integration with GORM
-- Auto database migration
+## Tech Stack
 
----
+* Go
+* JWT (JSON Web Tokens)
+* Docker
+* Docker Compose
+* REST API
 
-## 🛠 Tech Stack
+## Project Structure
 
-- Go (Gin Framework)
-- PostgreSQL
-- GORM ORM
-- JWT Authentication
-- REST API Architecture
+```text
+hennge-microblog-api
+│
+├── cmd
+│   └── api
+│       └── main.go
+│
+├── config
+│   └── db.go
+│
+├── internal
+│   ├── handlers
+│   ├── middleware
+│   └── models
+│
+├── Dockerfile
+├── docker-compose.yml
+├── go.mod
+├── go.sum
+└── README.md
+```
 
----
+## API Endpoints
 
-## 📡 API Endpoints
+### Authentication
 
-### Auth
-- POST /register
-- POST /login
-
-### User
-- GET /profile (Protected)
+| Method | Endpoint  | Description                 |
+| ------ | --------- | --------------------------- |
+| POST   | /register | Register a new user         |
+| POST   | /login    | Login and receive JWT token |
 
 ### Posts
-- POST /posts (Protected)
-- GET /posts
 
----
+| Method | Endpoint | Description                       |
+| ------ | -------- | --------------------------------- |
+| GET    | /posts   | Get all posts                     |
+| POST   | /posts   | Create a new post (Authenticated) |
 
-## 🔐 Authentication
+### Users
 
-All protected routes require:
+| Method | Endpoint    | Description          |
+| ------ | ----------- | -------------------- |
+| GET    | /users/{id} | Get user information |
+
+## Authentication Flow
+
+1. User registers an account.
+2. User logs in with credentials.
+3. Server generates a JWT token.
+4. Client sends the JWT token in the Authorization header.
+5. Middleware validates the token before allowing access to protected routes.
+
+## Running Locally
+
+### Clone Repository
+
+```bash
+git clone <repository-url>
+cd hennge-microblog-api
+```
+
+### Run with Go
+
+```bash
+go run cmd/api/main.go
+```
+
+### Run with Docker
+
+```bash
+docker-compose up --build
+```
+
+## Future Improvements
+
+* PostgreSQL Integration
+* Refresh Tokens
+* Rate Limiting
+* API Documentation (Swagger)
+* Unit Testing
+* CI/CD Pipeline
+
+## Author
+
+Palak Patel
+
+BTech ICT, DAIICT
