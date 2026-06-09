@@ -4,21 +4,21 @@ A secure RESTful microblogging backend built with Go, featuring JWT-based authen
 
 ## Features
 
-* User Registration
-* User Login with JWT Authentication
-* Protected API Routes
-* Create and View Posts
-* Authorization Middleware
-* Docker Support
-* Modular Project Architecture
+- User Registration
+- User Login with JWT Authentication
+- Protected API Routes
+- Create and View Posts
+- Authorization Middleware
+- Docker Support
+- Modular Project Architecture
 
 ## Tech Stack
 
-* Go
-* JWT (JSON Web Tokens)
-* Docker
-* Docker Compose
-* REST API
+- Go
+- JWT (JSON Web Tokens)
+- Docker
+- Docker Compose
+- REST API
 
 ## Project Structure
 
@@ -97,12 +97,12 @@ docker-compose up --build
 
 ## Future Improvements
 
-* PostgreSQL Integration
-* Refresh Tokens
-* Rate Limiting
-* API Documentation (Swagger)
-* Unit Testing
-* CI/CD Pipeline
+- PostgreSQL Integration
+- Refresh Tokens
+- Rate Limiting
+- API Documentation (Swagger)
+- Unit Testing
+- CI/CD Pipeline
 
 ## Author
 
