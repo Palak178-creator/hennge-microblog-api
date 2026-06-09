@@ -11,7 +11,7 @@ import (
 	"github.com/Palak178-creator/hennge-microblog-api/internal/models"
 )
 
-var jwtKey = []byte("hennge_secret_key")
+var jwtKey = []byte(config.GetJWTSecret())
 
 // ---------------- REGISTER ----------------
 

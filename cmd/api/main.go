@@ -12,6 +12,11 @@ import (
 )
 
 func main() {
+
+	// Load environment variables
+	config.LoadEnv()
+
+	// Initialize database
 	config.InitDB()
 
 	err := config.DB.AutoMigrate(
@@ -32,11 +37,14 @@ func main() {
 		})
 	})
 
+	// Authentication Routes
 	router.POST("/register", handlers.Register)
 	router.POST("/login", handlers.Login)
 
+	// User Routes
 	router.GET("/profile", middleware.AuthMiddleware(), handlers.Profile)
 
+	// Post Routes
 	router.POST("/posts", middleware.AuthMiddleware(), handlers.CreatePost)
 	router.GET("/posts", handlers.GetPosts)
 
